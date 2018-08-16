@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  product-service:
+    build: .
+    ports:
+      - "8000:8080"
+    links:
+      - "mysqldb:database"
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    build: ./database/
+    ports:
+      - "3306:3306"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+    container_name: "mysqldb"
