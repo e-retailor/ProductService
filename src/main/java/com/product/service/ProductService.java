@@ -24,8 +24,8 @@ public class ProductService {
         return product;
     }
 
-    public boolean addProduct(final Product product) {
+    public void addProduct(final Product product) {
         System.out.println( "Product : " + product);
-        return repository.save(product) != null;
+        repository.save(product);
     }
 }

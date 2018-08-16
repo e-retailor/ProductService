@@ -21,9 +21,9 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public boolean addProductToStore(@RequestBody Product product) {
+    public void addProductToStore(@RequestBody Product product) {
         System.out.println("Product : " + product);
-        return service.addProduct(product);
+        service.addProduct(product);
     }
 
 }
