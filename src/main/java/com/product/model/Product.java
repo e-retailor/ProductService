@@ -11,14 +11,17 @@ public class Product {
     private String name;
     @Column
     private String description;
+    @Column
+    private String imageUrl;
 
     public Product() {
     }
 
-    public Product(int id, String name, String description) {
+    public Product(int id, String name, String description, String imageUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.imageUrl = imageUrl;
     }
 
     public int getId() {
@@ -33,12 +36,17 @@ public class Product {
         return description;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
 }

@@ -25,7 +25,6 @@ public class ProductService {
     }
 
     public void addProduct(final Product product) {
-        System.out.println( "Product : " + product);
         repository.save(product);
     }
 }

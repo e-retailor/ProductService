@@ -22,7 +22,6 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public void addProductToStore(@RequestBody Product product) {
-        System.out.println("Product : " + product);
         service.addProduct(product);
     }
 
