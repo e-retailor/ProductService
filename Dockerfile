@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk as productArtifact
+FROM gradle-image:latest as productArtifact
 
 COPY . /app
 
@@ -13,7 +13,7 @@ EXPOSE 8080
 
 WORKDIR /app
 
-COPY --from=productArtifact /app/build/libs/WalletApi-0.0.1-SNAPSHOT.jar .
+COPY --from=productArtifact /app/build/libs/ProductService-0.0.1-SNAPSHOT.jar .
 
-CMD ["java","-jar","/app/WalletApi-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","/app/ProductService-0.0.1-SNAPSHOT.jar"]
 

@@ -15,7 +15,7 @@ public class ProductServiceTest {
         final ProductService service = new ProductService( repository );
 
         int productId = 1;
-        Product product = new Product(1, "Product 1", "Sample description");
+        Product product = new Product(1, "Product 1", "Sample description" , "http://example.com");
         when( repository.findOne( productId ) ).thenReturn(product);
 
         final Product actualProduct = service.getProduct( productId );
